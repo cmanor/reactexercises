@@ -5,17 +5,10 @@ const Header = (props) => {
   const course = props.course;
   return (
     <div>
-    <h1>{props.course}</h1>
+    <h1>{course}</h1>
     </div>
   );
 };
-
-const Deez = (props) => {
-  return (
-  <div>
-    <p>{props.name}{props.exercises}</p>
-  </div>)
-}
 
 const Content = (props) => {
   const parts = props.parts;
@@ -27,6 +20,14 @@ const Content = (props) => {
     </div>
   )
 }
+
+const Deez = (props) => {
+  return (
+  <div>
+    <p>{props.name}{props.exercises}</p>
+  </div>)
+}
+
 
 const Total = (props) => {
   const parts = props.parts;
