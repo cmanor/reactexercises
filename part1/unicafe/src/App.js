@@ -9,6 +9,9 @@ const App = () => {
   const deez = () => setNeutral(neutral + 1);
   const knutz = () => setBad(bad + 1);
 
+  const all = bad + good + neutral;
+  const avg = (bad-good)/all;
+  const pos = (good/all*100);
 
   return (
     <div>
@@ -19,7 +22,10 @@ const App = () => {
        <h1>statistics</h1>
        <p>good {good}</p>
        <p>neutral {neutral}</p>
-       <p>bad{bad}</p>
+       <p>bad {bad}</p>
+       <p>all {all}</p>
+       <p>average {avg}</p>
+       <p>positive {pos}%</p>
     </div>
   )
 }
