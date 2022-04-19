@@ -14,20 +14,25 @@ if (good === 0 &&  neutral ===0 && bad ===0)
   return(
   <h1>CANDY CORN IS GROSS</h1>)
   } else { return (
-    <div>
+    <table>
+      <tbody>
     <StatisticsLine text = "good " form = {good}/>
     <StatisticsLine text = "neutral " form = {neutral}/>
     <StatisticsLine text = "bad" form = {bad}/>
     <StatisticsLine text = "all " form = {all}/>
     <StatisticsLine text = "avg " form = {avg}/>
     <StatisticsLine text = "pos " form = {pos}/>
-    </div>
+    </tbody>
+    </table>
   )
   }
 }
 const StatisticsLine = (props) =>{
   return (
-  <p>{props.text} {props.form}</p>
+    <tr>
+      <td>{props.text}</td>
+      <td>{props.form}</td>
+    </tr>
   )
 }
 
