@@ -14,13 +14,22 @@ const App = () => {
   const [selected, setSelected] = useState(0)
   const deez = () => {
     setSelected ( Math.floor(Math.random() * anecdotes.length)
-
     )
   }
+
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0));
+  const vote = () => {
+    const knutz = { ...votes };
+    knutz[selected]++;
+    return knutz;
+  }
+
   return (
     <div>
-      <button onClick={deez}>get some weird random quote. Tbh most of them are pretty bad. I wouldn't recommend it.</button> 
+      <button onClick={deez}>get some weird random quote. Tbh most of them are pretty bad. I wouldn't recommend it.</button>
+      <button onClick={()=>setVotes(vote())}>Vote for the current quote for some reason. Again, I wouldn't recommend it.</button>
       <p>{anecdotes[selected]}</p>
+      <p>has {votes[selected]} votes I guess</p>
     </div>
   )
 }
