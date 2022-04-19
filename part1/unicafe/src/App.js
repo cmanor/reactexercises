@@ -7,7 +7,13 @@ const Statistics = (props) => {
   const all = bad + good + neutral;
   const avg = (bad-good)/all;
   const pos = (good/all*100);
-  return (
+
+
+if (good === 0 &&  neutral ===0 && bad ===0)
+{
+  return(
+  <h1>CANDY CORN IS GROSS</h1>)
+  } else { return (
     <div>
     <p>good {good}</p>
     <p>neutral {neutral}</p>
@@ -17,6 +23,8 @@ const Statistics = (props) => {
     <p>positive {pos}%</p>
     </div>
   )
+
+  }
 }
 
 
