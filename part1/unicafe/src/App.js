@@ -15,18 +15,27 @@ if (good === 0 &&  neutral ===0 && bad ===0)
   <h1>CANDY CORN IS GROSS</h1>)
   } else { return (
     <div>
-    <p>good {good}</p>
-    <p>neutral {neutral}</p>
-    <p>bad {bad}</p>
-    <p>all {all}</p>
-    <p>average {avg}</p>
-    <p>positive {pos}%</p>
+    <StatisticsLine text = "good " form = {good}/>
+    <StatisticsLine text = "neutral " form = {neutral}/>
+    <StatisticsLine text = "bad" form = {bad}/>
+    <StatisticsLine text = "all " form = {all}/>
+    <StatisticsLine text = "avg " form = {avg}/>
+    <StatisticsLine text = "pos " form = {pos}/>
     </div>
   )
-
   }
 }
+const StatisticsLine = (props) =>{
+  return (
+  <p>{props.text} {props.form}</p>
+  )
+}
 
+const Asston = (props) => {
+  return(
+    <button onClick={props.onClick}>{props.text}</button>
+  )
+}
 
 const App = () => {
   // save clicks of each button to its own state
@@ -41,9 +50,9 @@ const App = () => {
   return (
     <div>
       <h1>give feedback</h1>
-       <button onClick={increaseByOne}>good</button>
-       <button onClick={deez}>neutral</button>
-       <button onClick={knutz}>bad</button>
+       <Asston onClick = {increaseByOne} text= "goooooooooood" />
+       <Asston onClick = {deez} text= "meh" />
+       <Asston onClick = {knutz} text= "shiz is garbage bro" />
        <h1>statistics</h1>
        <Statistics good = {good}
       bad = {bad}
